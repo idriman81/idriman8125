@@ -3,142 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List Familiale</title>
+  <title>IDRISSI'S TO DO LIST</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div id="app">
-    <h1 id="date"></h1>
+    <!-- En-tête -->
+    <header>
+      <p id="current-date"></p>
+      <h1 id="app-name">IDRISSI'S TO DO LIST</h1>
+      <div id="header-middle">
+        <p id="scores">
+          <span style="color: #FF5733;">Otmane: <span id="points-otmane">100</span></span> &nbsp;&nbsp;
+          <span style="color: #33FF57;">Aicha: <span id="points-aicha">100</span></span> &nbsp;&nbsp;
+          <span style="color: #3357FF;">Assia: <span id="points-assia">50</span></span> &nbsp;&nbsp;
+          <span style="color: #FF33A1;">Yahya: <span id="points-yahya">50</span></span>
+        </p>
+      </div>
+    </header>
+
+    <!-- Grille des membres -->
     <div id="members-grid">
       <!-- Colonne Otmane -->
       <div class="member-column" style="background-color: #FF5733;">
-        <h2>Otmane</h2>
-        <p>Points: <span id="points-otmane">100</span></p>
-        <div class="tasks">
-          <button class="task task-color-1" onclick="completeTask('otmane', 1)">
-            <i class="fas fa-briefcase"></i> Task 1
-          </button>
-          <button class="task task-color-2" onclick="completeTask('otmane', 2)">
-            <i class="fas fa-car"></i> Task 2
-          </button>
-          <button class="task task-color-3" onclick="completeTask('otmane', 3)">
-            <i class="fas fa-utensils"></i> Task 3
-          </button>
-          <button class="task task-color-4" onclick="completeTask('otmane', 4)">
-            <i class="fas fa-shopping-cart"></i> Task 4
-          </button>
-          <button class="task task-color-1" onclick="completeTask('otmane', 5)">
-            <i class="fas fa-dumbbell"></i> Task 5
-          </button>
-          <button class="task task-color-2" onclick="completeTask('otmane', 6)">
-            <i class="fas fa-book"></i> Task 6
-          </button>
-          <button class="task task-color-3" onclick="completeTask('otmane', 7)">
-            <i class="fas fa-walking"></i> Task 7
-          </button>
-          <button class="task task-color-4" onclick="completeTask('otmane', 8)">
-            <i class="fas fa-coffee"></i> Task 8
-          </button>
+        <div class="member-header">
+          <img src="images/otmane.png" alt="Otmane" class="member-icon">
+          <h2>Otmane</h2>
+          <p class="member-score">Score: <span id="points-otmane">100</span></p>
         </div>
+        <div class="tasks" id="tasks-otmane"></div>
+        <button class="add-task" onclick="openTaskEditor('otmane')">Ajouter une tâche</button>
       </div>
 
       <!-- Colonne Aicha -->
       <div class="member-column" style="background-color: #33FF57;">
-        <h2>Aicha</h2>
-        <p>Points: <span id="points-aicha">100</span></p>
-        <div class="tasks">
-          <button class="task task-color-1" onclick="completeTask('aicha', 1)">
-            <i class="fas fa-briefcase"></i> Task 1
-          </button>
-          <button class="task task-color-2" onclick="completeTask('aicha', 2)">
-            <i class="fas fa-car"></i> Task 2
-          </button>
-          <button class="task task-color-3" onclick="completeTask('aicha', 3)">
-            <i class="fas fa-utensils"></i> Task 3
-          </button>
-          <button class="task task-color-4" onclick="completeTask('aicha', 4)">
-            <i class="fas fa-shopping-cart"></i> Task 4
-          </button>
-          <button class="task task-color-1" onclick="completeTask('aicha', 5)">
-            <i class="fas fa-dumbbell"></i> Task 5
-          </button>
-          <button class="task task-color-2" onclick="completeTask('aicha', 6)">
-            <i class="fas fa-book"></i> Task 6
-          </button>
-          <button class="task task-color-3" onclick="completeTask('aicha', 7)">
-            <i class="fas fa-walking"></i> Task 7
-          </button>
-          <button class="task task-color-4" onclick="completeTask('aicha', 8)">
-            <i class="fas fa-coffee"></i> Task 8
-          </button>
+        <div class="member-header">
+          <img src="images/aicha.png" alt="Aicha" class="member-icon">
+          <h2>Aicha</h2>
+          <p class="member-score">Score: <span id="points-aicha">100</span></p>
         </div>
+        <div class="tasks" id="tasks-aicha"></div>
+        <button class="add-task" onclick="openTaskEditor('aicha')">Ajouter une tâche</button>
       </div>
 
       <!-- Colonne Assia -->
       <div class="member-column" style="background-color: #3357FF;">
-        <h2>Assia</h2>
-        <p>Points: <span id="points-assia">50</span></p>
-        <div class="tasks">
-          <button class="task task-color-1" onclick="completeTask('assia', 1)">
-            <i class="fas fa-sun"></i> Good Morning
-          </button>
-          <button class="task task-color-2" onclick="completeTask('assia', 2)">
-            <i class="fas fa-tooth"></i> Brosse les dents
-          </button>
-          <button class="task task-color-3" onclick="completeTask('assia', 3)">
-            <i class="fas fa-bed"></i> Faire le lit
-          </button>
-          <button class="task task-color-4" onclick="completeTask('assia', 4)">
-            <i class="fas fa-book"></i> Faire les devoirs
-          </button>
-          <button class="task task-color-1" onclick="completeTask('assia', 5)">
-            <i class="fas fa-utensils"></i> Aider à la cuisine
-          </button>
-          <button class="task task-color-2" onclick="completeTask('assia', 6)">
-            <i class="fas fa-gamepad"></i> Jouer dehors
-          </button>
-          <button class="task task-color-3" onclick="completeTask('assia', 7)">
-            <i class="fas fa-book-reader"></i> Lire un livre
-          </button>
-          <button class="task task-color-4" onclick="completeTask('assia', 8)">
-            <i class="fas fa-moon"></i> Good Night
-          </button>
+        <div class="member-header">
+          <img src="images/assia.png" alt="Assia" class="member-icon">
+          <h2>Assia</h2>
+          <p class="member-score">Score: <span id="points-assia">50</span></p>
         </div>
+        <div class="tasks" id="tasks-assia"></div>
+        <button class="add-task" onclick="openTaskEditor('assia')">Ajouter une tâche</button>
       </div>
 
       <!-- Colonne Yahya -->
       <div class="member-column" style="background-color: #FF33A1;">
-        <h2>Yahya</h2>
-        <p>Points: <span id="points-yahya">50</span></p>
-        <div class="tasks">
-          <button class="task task-color-1" onclick="completeTask('yahya', 1)">
-            <i class="fas fa-sun"></i> Good Morning
-          </button>
-          <button class="task task-color-2" onclick="completeTask('yahya', 2)">
-            <i class="fas fa-tooth"></i> Brosse les dents
-          </button>
-          <button class="task task-color-3" onclick="completeTask('yahya', 3)">
-            <i class="fas fa-bed"></i> Faire le lit
-          </button>
-          <button class="task task-color-4" onclick="completeTask('yahya', 4)">
-            <i class="fas fa-book"></i> Faire les devoirs
-          </button>
-          <button class="task task-color-1" onclick="completeTask('yahya', 5)">
-            <i class="fas fa-utensils"></i> Aider à la cuisine
-          </button>
-          <button class="task task-color-2" onclick="completeTask('yahya', 6)">
-            <i class="fas fa-gamepad"></i> Jouer dehors
-          </button>
-          <button class="task task-color-3" onclick="completeTask('yahya', 7)">
-            <i class="fas fa-book-reader"></i> Lire un livre
-          </button>
-          <button class="task task-color-4" onclick="completeTask('yahya', 8)">
-            <i class="fas fa-moon"></i> Good Night
-          </button>
+        <div class="member-header">
+          <img src="images/yahya.png" alt="Yahya" class="member-icon">
+          <h2>Yahya</h2>
+          <p class="member-score">Score: <span id="points-yahya">50</span></p>
         </div>
+        <div class="tasks" id="tasks-yahya"></div>
+        <button class="add-task" onclick="openTaskEditor('yahya')">Ajouter une tâche</button>
       </div>
     </div>
+
+    <!-- Éditeur de tâches -->
+    <div id="task-editor" class="modal">
+      <div class="modal-content">
+        <h2>Éditeur de tâches</h2>
+        <input type="text" id="task-name" placeholder="Nom de la tâche">
+        <select id="task-icon">
+          <option value="fas fa-sun">☀️</option>
+          <option value="fas fa-tooth">🦷</option>
+          <option value="fas fa-bed">🛏️</option>
+          <option value="fas fa-book">📚</option>
+        </select>
+        <button onclick="saveTask()">Enregistrer</button>
+        <button onclick="closeTaskEditor()">Annuler</button>
+      </div>
+    </div>
+
+    <!-- Historique des tâches -->
+    <div id="history" class="modal">
+      <div class="modal-content">
+        <h2>Historique des tâches</h2>
+        <ul id="history-list"></ul>
+        <button onclick="closeHistory()">Fermer</button>
+      </div>
+    </div>
+
+    <!-- Bouton pour afficher l'historique -->
+    <button id="show-history" onclick="openHistory()">Voir l'historique</button>
   </div>
   <script src="script.js"></script>
 </body>
